@@ -8,7 +8,8 @@ import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import TopHeader from "@/components/layout/top-header";
 import Chatbot from "@/components/chatbot";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const siteConfig = {
   name: "HaeBot | PT HaeBot Teknologi Indonesia",
@@ -197,7 +198,8 @@ export default function RootLayout({
               <main className="bg-background w-full">{children}</main>
             </div>
             <Chatbot />
-            <Analytics/>
+            <Analytics />
+            <GoogleAnalytics gaId={process.env.GTAG as string} />
             <Footer />
           </div>
         </SidebarProvider>
