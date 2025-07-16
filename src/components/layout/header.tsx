@@ -25,6 +25,7 @@ import { SidebarTrigger } from "../ui/sidebar";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { contactIcons } from "@/shared/contacts";
 import { ScrollArea } from "../ui/scroll-area";
+import { sendEvent } from "@/api/services/event.service";
 
 const ListItem = ({
   className,
@@ -37,11 +38,13 @@ const ListItem = ({
     <div>
       <NavigationMenuLink asChild>
         <Link
+          onClick={() => sendEvent(`${title}-Product-Click`)}
           className={cn(
             "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline outline-hidden transition-colors select-none",
             className,
           )}
           href={href || "/"}
+          target="_blank"
           {...props}
         >
           <div className="text-sm leading-none font-medium">{title}</div>
@@ -142,12 +145,15 @@ export default function Header() {
           {contactIcons.map((contact, idx) => {
             return (
               <Button
+                onClick={() => sendEvent(`${contact.name}-Social-Click`)}
                 key={contact.link + idx + "-header"}
                 className="h-auto border-none bg-transparent px-4 py-4 outline-hidden"
                 variant="outline"
                 asChild
               >
-                <Link href={contact.link}>{contact.icon}</Link>
+                <Link href={contact.link} target="_blank">
+                  {contact.icon}
+                </Link>
               </Button>
             );
           })}

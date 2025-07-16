@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
 import { FaPhone } from "react-icons/fa6";
 import {
@@ -10,6 +12,7 @@ import {
 } from "@/components/ui/card-section";
 import BlurFade from "@/components/ui/blur-fade";
 import Link from "next/link";
+import { sendEvent } from "@/api/services/event.service";
 
 export default function CTASection() {
   return (
@@ -33,8 +36,8 @@ export default function CTASection() {
         </CardSectionHeader>
         <CardSectionContent className="flex justify-center">
           <BlurFade inView inViewMargin="-100px">
-            <Button asChild>
-              <Link href="https://wa.me/6285246428746" target="_blank" >
+            <Button onClick={() => sendEvent("CTA Click")} asChild>
+              <Link href="https://wa.me/6285246428746" target="_blank">
                 Hubungi Kami <FaPhone aria-hidden className="ml-2 size-4" />
               </Link>
             </Button>
