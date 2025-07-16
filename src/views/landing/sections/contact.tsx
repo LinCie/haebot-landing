@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import {
@@ -12,6 +14,7 @@ import Image from "next/image";
 import tokopedia from "@/assets/toko/tokopedia.webp";
 import shopee from "@/assets/toko/shopee.webp";
 import Haebot from "@/assets/haebot";
+import { sendEvent } from "@/api/services/event.service";
 
 function ContactInfo({ icon, text }: ContactProps) {
   return (
@@ -76,6 +79,9 @@ export default function ContactSection() {
                     <div className="flex flex-wrap gap-2">
                       {contactIcons.map((contact, idx) => (
                         <Button
+                          onClick={() =>
+                            sendEvent(`${contact.name}-Social-Click`)
+                          }
                           key={"contact-icon-" + idx}
                           className="h-auto p-3 [&_svg]:size-5"
                           variant="secondary"

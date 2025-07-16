@@ -1,6 +1,7 @@
 import { MapPin, Phone } from "lucide-react";
 import { SiFacebook, SiTiktok, SiInstagram, SiYoutube } from "react-icons/si";
 export interface IContactIcon {
+  name: string;
   link: string;
   icon: React.ReactElement;
 }
@@ -23,18 +24,22 @@ export const contacts: ContactProps[] = [
 
 export const contactIcons: IContactIcon[] = [
   {
+    name: "Facebook",
     link: "https://www.facebook.com/people/Haebot-Teknologi/61561255135421/",
     icon: <SiFacebook className="size-4" aria-label="Facebook" />,
   },
   {
+    name: "TikTok",
     link: "https://www.tiktok.com/@haebotstore",
     icon: <SiTiktok className="size-4" aria-label="TikTok" />,
   },
   {
+    name: "Instagram",
     link: "https://www.instagram.com/haebot_tech/",
     icon: <SiInstagram className="size-4" aria-label="Instagram" />,
   },
   {
+    name: "YouTube",
     link: "https://www.youtube.com/@haebot",
     icon: <SiYoutube className="size-4" aria-label="Youtube" />,
   },

@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import haebotLogo from "@/assets/images/logo.png";
 
@@ -24,6 +26,7 @@ import {
 import { contactIcons } from "@/shared/contacts";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { sendEvent } from "@/api/services/event.service";
 
 export function AppSidebar() {
   return (
@@ -67,16 +70,30 @@ export function AppSidebar() {
                       <CollapsibleContent className="data-[state=closed]:animate-slide-up data-[state=open]:animate-slide-down overflow-hidden">
                         <SidebarMenuSub>
                           <SidebarMenuSubItem>
-                            <a href="https://katalog.haebot.com/">
+                            <Link
+                              onClick={() =>
+                                sendEvent(`All Categories-Product-Click`)
+                              }
+                              target="_blank"
+                              href="https://katalog.haebot.com/"
+                            >
                               <span>All Categories</span>
-                            </a>
+                            </Link>
                           </SidebarMenuSubItem>
                           {link.content.map((content) => {
                             return (
                               <SidebarMenuSubItem key={content.display}>
-                                <a href={content.url}>
+                                <Link
+                                  onClick={() =>
+                                    sendEvent(
+                                      `${content.display}-Product-Click`,
+                                    )
+                                  }
+                                  target="_blank"
+                                  href={content.url}
+                                >
                                   <span>{content.display}</span>
-                                </a>
+                                </Link>
                               </SidebarMenuSubItem>
                             );
                           })}
