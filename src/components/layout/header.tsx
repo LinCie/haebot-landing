@@ -163,7 +163,7 @@ export default function Header() {
             variant="expandIcon"
             Icon={Phone}
             iconPlacement="right"
-            className="from-primary bg-linear-to-r to-[#126BC1] [&_svg]:size-4"
+            className="from-primary bg-linear-to-r to-primary-darker [&_svg]:size-4"
             asChild
           >
             <Link href="#cta-section" target="_self">
