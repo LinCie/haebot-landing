@@ -25,7 +25,8 @@ export default function HeroSection() {
           aria-hidden
           height={720}
           width={1280}
-          loading="lazy"
+          loading="eager"
+          fetchPriority="high"
           decoding="async"
           className="size-full object-cover object-center"
         />
@@ -41,12 +42,12 @@ export default function HeroSection() {
                 variant="expandIcon"
                 asChild
                 size="sm"
-                className="group rounded-full bg-secondary from-primary to-[#126BC1] hover:bg-linear-to-r [&_svg]:size-4"
+                className="group bg-secondary from-primary rounded-full to-[#126BC1] hover:bg-linear-to-r [&_svg]:size-4"
                 Icon={ArrowRightIcon}
                 iconPlacement="right"
               >
-                <Link href="#feature-section" >
-                  <AnimatedShinyText className="inline-flex items-center justify-center text-xs transition ease-out group-hover:text-background group-hover:duration-300">
+                <Link href="#feature-section">
+                  <AnimatedShinyText className="group-hover:text-background inline-flex items-center justify-center text-xs transition ease-out group-hover:duration-300">
                     ✨ Lihat layanan yang kami tawarkan
                   </AnimatedShinyText>
                   <BorderBeam size={35} duration={12} delay={9} />
@@ -92,7 +93,7 @@ export default function HeroSection() {
                 variant="expandIcon"
                 Icon={Phone}
                 iconPlacement="right"
-                className="bg-linear-to-r from-primary to-[#126BC1] [&_svg]:size-4"
+                className="from-primary bg-linear-to-r to-[#126BC1] [&_svg]:size-4"
                 asChild
               >
                 <Link href="#contact-section" target="_self">
@@ -112,7 +113,8 @@ export default function HeroSection() {
             height={500}
             alt="cnc machines"
             decoding="async"
-            loading="lazy"
+            loading="eager"
+            fetchPriority="high"
             className="size-96 object-cover md:size-[450px]"
           />
         </div>

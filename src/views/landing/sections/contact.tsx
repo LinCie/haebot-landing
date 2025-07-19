@@ -37,7 +37,7 @@ export default function ContactSection() {
 
   return (
     <section
-      className="bg-primary text-primary-foreground"
+      className="bg-primary-darker text-primary-foreground"
       id="contact-section"
       aria-labelledby="contact-section-title"
     >

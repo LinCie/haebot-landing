@@ -12,7 +12,7 @@ export default function Footer() {
   );
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-primary-darker text-primary-foreground">
       <div className="mx-auto max-w-[--breakpoint-xl] px-6 py-12 sm:px-8">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="lg:col-span-1">
