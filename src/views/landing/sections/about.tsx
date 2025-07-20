@@ -116,6 +116,10 @@ export default function AboutSection() {
                 src={aboutImage}
                 alt="Tim Haebot berdiskusi mengenai proyek CNC"
                 className="h-96 w-full rounded-xl object-cover shadow-lg"
+                loading="lazy"
+                decoding="async"
+                width={332}
+                height={415}
               />
             </BlurFade>
             <div className="space-y-4">

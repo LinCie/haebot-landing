@@ -109,8 +109,8 @@ export default function HeroSection() {
           <Image
             id="weird-image"
             src={heroMachine}
-            width={500}
-            height={500}
+            width={384}
+            height={384}
             alt="cnc machines"
             decoding="async"
             loading="eager"

@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     "HaeBot",
     "PT HaeBot Teknologi Indonesia",
     "CNC",
+    "CNC Indonesia",
     "Komponen CNC",
     "Suku Cadang CNC",
     "Sparepart CNC",
