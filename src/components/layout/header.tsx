@@ -85,6 +85,8 @@ export default function Header() {
           loading="eager"
           decoding="async"
           className="h-8 w-auto select-none"
+          width={123}
+          height={32}
         />
         <div className="flex-1">
           <NavigationMenu>
@@ -163,7 +165,7 @@ export default function Header() {
             variant="expandIcon"
             Icon={Phone}
             iconPlacement="right"
-            className="from-primary bg-linear-to-r to-primary-darker [&_svg]:size-4"
+            className="from-primary to-primary-darker bg-linear-to-r [&_svg]:size-4"
             asChild
           >
             <Link href="#cta-section" target="_self">

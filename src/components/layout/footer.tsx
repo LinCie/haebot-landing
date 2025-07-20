@@ -22,7 +22,7 @@ export default function Footer() {
                 PT Haebot Teknologi Indonesia
               </span>
             </div>
-            <p className="text-primary-foreground/80 mt-4 max-w-xs text-sm">
+            <p className="text-primary-foreground mt-4 max-w-xs text-sm">
               Mitra terpercaya Anda di bidang elektronik, robotika, dan solusi
               teknologi inovatif.
             </p>
@@ -42,7 +42,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Grid Link Navigasi */}
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-3 lg:col-span-2">
             <div>
               <p className="font-semibold">Peta Situs</p>
@@ -96,9 +95,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Baris Copyright */}
         <div className="border-primary-foreground/20 mt-12 border-t pt-6">
-          <p className="text-primary-foreground/60 text-center text-xs">
+          <p className="text-primary-foreground text-center text-xs">
             Copyright © {year} PT HaeBot Teknologi Indonesia. All rights
             reserved.
           </p>

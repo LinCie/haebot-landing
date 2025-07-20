@@ -78,6 +78,10 @@ export default function CarouselSection() {
                   src={banner.src}
                   alt={banner.alt}
                   className="size-full object-contain object-center"
+                  loading="lazy"
+                  decoding="async"
+                  width={378}
+                  height={200}
                 />
               </CarouselItem>
             ))}
