@@ -1,3 +1,5 @@
+"use client"
+
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import {
@@ -16,6 +18,7 @@ import { ArrowRightIcon } from "lucide-react";
 import beltImage from "@/assets/images/product-belt.jpg";
 import nutImage from "@/assets/images/product-nut.jpeg";
 import railImage from "@/assets/images/product-rail.jpg";
+import { sendEvent } from "@/api/services/event.service";
 
 interface LatestProduct {
   name: string;
@@ -99,6 +102,7 @@ function LatestProductCard({
               Icon={ArrowRightIcon}
               iconPlacement="right"
               className="text-background bg-transparent hover:bg-transparent"
+              onClick={() => sendEvent(`${name}-Card-Tokopedia-Click`)}
             >
               Lihat di Tokopedia
             </Button>
@@ -111,7 +115,11 @@ function LatestProductCard({
         </CardHeader>
         <CardContent className="flex flex-grow flex-col p-4 pt-0">
           <p className="text-muted-foreground flex-grow">{description}</p>
-          <Button className="mt-6 w-full" asChild>
+          <Button
+            className="mt-6 w-full"
+            onClick={() => sendEvent(`${name}-Card-Catalogue-Click`)}
+            asChild
+          >
             <Link href={link} target="_blank" rel="noopener noreferrer">
               Lihat Detail <ArrowRightIcon className="ml-2 size-4" />
             </Link>

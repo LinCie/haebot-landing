@@ -74,7 +74,6 @@ export default function CarouselSection() {
             {banners.map((banner, index) => (
               <CarouselItem key={index}>
                 <Image
-                  priority={index === 0}
                   src={banner.src}
                   alt={banner.alt}
                   className="size-full object-contain object-center"
