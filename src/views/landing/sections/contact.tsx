@@ -110,6 +110,9 @@ export default function ContactSection() {
                           key={market.alt}
                           className="bg-secondary h-auto overflow-hidden rounded-md p-3"
                           variant="secondary"
+                          onClick={() =>
+                            sendEvent(`${market.alt}-Marketplace-Click`)
+                          }
                           asChild
                         >
                           <Link

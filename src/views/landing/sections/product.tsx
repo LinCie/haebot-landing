@@ -26,6 +26,7 @@ import { useMobileDetect } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { categories } from "@/shared/categories";
 import logo from "@/assets/images/logo.png";
+import { sendEvent } from "@/api/services/event.service";
 
 interface IProduct {
   name: string;
@@ -77,6 +78,7 @@ function ProductCard({
               variant="outline"
               size="sm"
               className="transition-opacity"
+              onClick={() => sendEvent(`${name}-Card-Catalogue-Click`)}
               asChild
             >
               <Link href={link} target="_blank">
@@ -102,6 +104,7 @@ function ProductCard({
               variant="default"
               size="sm"
               className="group/button w-full"
+              onClick={() => sendEvent(`${name}-Card-Catalogue-Click`)}
               asChild
             >
               <Link target="_blank" href={link}>
@@ -115,6 +118,7 @@ function ProductCard({
             <Button
               size="sm"
               className="group/button w-full bg-green-500 text-white hover:bg-green-600"
+              onClick={() => sendEvent(`${name}-Card-Whatsapp-Click`)}
               asChild
             >
               <Link
